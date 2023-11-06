@@ -1,0 +1,274 @@
+@import "bootstrap/scss/bootstrap";
+
+//Navigation
+.navbar {
+  background-color: #000000;
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 16vh;
+  z-index: 2;
+  @media screen and (min-width: 576px) {
+    height: 12vh;
+  }
+  .container {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    .logoLink {
+      .logo {
+        max-width: 250px;
+        @media screen and (min-width: 768px) {
+          max-width: 400px;
+        }
+      }
+    }
+    .button {
+      background-color: #fdd030;
+      color: #000;
+      text-transform: uppercase;
+      border: none;
+      justify-self: flex-end;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      .cartTxt {
+        display: none;
+        @media screen and (min-width: 576px) {
+          display: inline;
+        }
+      }
+      .cartIcon {
+        font-size: 1.5rem;
+        @media screen and (min-width: 576px) {
+          display: none;
+        }
+      }
+      .badge {
+        color: #000;
+      }
+    }
+  }
+}
+
+//Reusable cart
+.cart {
+  display: flex;
+  flex-direction: column;
+
+  .cartProducts {
+    .listGroupItem {
+      display: flex;
+      flex-direction: column;
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        p {
+          margin: 0;
+        }
+        .price {
+          font-size: 12px;
+          margin-bottom: 16px;
+        }
+        button {
+          font-size: 20px;
+          border: none;
+        }
+      }
+      .btnPriceGroup {
+        display: flex;
+        justify-content: space-between;
+        .btnGroup {
+          .btn {
+            min-width: 32px;
+            padding: 0 6px;
+          }
+          .amount {
+            margin: 0;
+          }
+        }
+        .itemTotal {
+          align-self: flex-end;
+          margin: 0;
+        }
+      }
+    }
+    .alert {
+      padding: 8px;
+    }
+  }
+  .orderTotal {
+    text-align: right;
+  }
+}
+
+//Popout shoppingCart
+.offcanvasBody {
+  display: flex;
+  flex-direction: column;
+  .checkoutBtn {
+    align-self: center;
+  }
+}
+
+//Pageheading
+.pageheading {
+  padding-top: 16vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  @media screen and (min-width: 576px) {
+    padding-top: 12vh;
+  }
+  .bg {
+    background-color: #ff4ea3;
+    width: 100%;
+
+    h3 {
+      padding: 1rem;
+      color: #ffffff;
+      margin-bottom: 0;
+    }
+  }
+  .dropdown {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fff;
+    .active {
+      background-color: darkgray;
+    }
+  }
+}
+
+//Product pages
+.productsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding: 265px 0 80px 0;
+  @media screen and (min-width: 576px) {
+    padding: 230px 0 80px 0;
+  }
+  .productItem {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    flex: 0 1 calc(50% - 10px);
+    @media screen and (min-width: 768px) {
+      flex: 0 1 calc(33.33% - 10px);
+    }
+    @media screen and (min-width: 992px) {
+      flex: 0 1 calc(25% - 10px);
+    }
+    @media screen and (min-width: 1200px) {
+      flex: 0 1 calc(20% - 10px);
+    }
+    .productThumbnail {
+      margin-top: 5%;
+      width: 90%;
+    }
+    .productTxt {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .btnWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: flex-end;
+      gap: 8px;
+      @media screen and (min-width: 576px) {
+        justify-content: flex-end;
+      }
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+      }
+      button {
+        width: 100%;
+        @media screen and (min-width: 768px) {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+//Product details modal
+.modal-dialog {
+  max-width: 90%;
+  @media screen and (min-width: 992px) {
+    max-width: 70%;
+  }
+  .modal-content {
+    min-height: 40vh;
+    .spinnerBox {
+      display: flex;
+      justify-content: center;
+      padding-top: 100px;
+      height: 100%;
+    }
+    .modalBody {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      min-height: 40%;
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      img {
+        object-fit: contain;
+        @media screen and (min-width: 768px) {
+          width: 40%;
+          align-self: flex-start;
+        }
+      }
+      .catHeading {
+        margin: 0;
+      }
+      .catMap {
+        display: flex;
+        gap: 8px;
+      }
+    }
+  }
+}
+
+//Checkout page
+.checkout {
+  max-width: 700px;
+  padding: 150px 0 80px 0;
+  .form {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 56px;
+    .btn {
+      align-self: center;
+    }
+  }
+}
+
+//Confirmation modal
+.confirmModal {
+  .modal-title {
+    width: 100%;
+    text-align: center;
+  }
+  .modal-content {
+    border: none;
+    .modalBody {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
