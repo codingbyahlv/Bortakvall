@@ -11,7 +11,7 @@ import { OrderProduct, Order } from "../types/Order.types";
 import { CartProduct } from "../types/Product.types";
 import { postOrder as ProductsAPI_postOrder } from "../services/ProductsAPI";
 
-type ValidationState = {
+export type ValidationState = {
   [key: string]: boolean | undefined;
 };
 
