@@ -19,24 +19,24 @@ const instance = axios.create({
 });
 
 const get = async <T>(endpoint: string) => {
-  const response = await axios.get<T>(endpoint);
+  const response = await instance.get<T>(endpoint);
   return response.data;
 };
 
 export const getAllProducts = () => {
-  return get<ProductsResponse>(`${BASE_URL}/products`);
+  return get<ProductsResponse>(`/products`);
 };
 
 export const getProduct = (id: number) => {
-  return get<ProductResponse>(`${BASE_URL}/products/${id}`);
+  return get<ProductResponse>(`/products/${id}`);
 };
 
 export const getAllTags = () => {
-  return get<TagResponse>(`${BASE_URL}/tags`);
+  return get<TagResponse>(`/tags`);
 };
 
 export const getTag = (id: number) => {
-  return get<TagProductsResponse>(`${BASE_URL}/tags/${id}`);
+  return get<TagProductsResponse>(`/tags/${id}`);
 };
 
 const post = async <Payload, Response>(endpoint: string, data: Payload) => {
@@ -45,5 +45,5 @@ const post = async <Payload, Response>(endpoint: string, data: Payload) => {
 };
 
 export const postOrder = (order: Order) => {
-  return post<Order, OrderResponse>(`${BASE_URL}/users/21/orders`, order);
+  return post<Order, OrderResponse>(`/users/21/orders`, order);
 };

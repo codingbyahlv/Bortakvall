@@ -272,3 +272,24 @@
     }
   }
 }
+
+.scrollBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  font-size: 48px;
+  color: #111;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 0.5px solid #fff;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+  @media screen and (min-width: 992px) {
+    right: 50px;
+  }
+  &:hover {
+    opacity: 1;
+    color: #fdd030;
+  }
+}
